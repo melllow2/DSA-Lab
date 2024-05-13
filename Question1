@@ -1,0 +1,38 @@
+package Question1;
+
+import java.util.Scanner;
+
+public class Question1h {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input sequence of numbers into an array
+        System.out.print("Enter the length of the sequence: ");
+        int length = scanner.nextInt();
+        int[] numbers = new int[length];
+        System.out.println("Enter the numbers:");
+        for (int i = 0; i < length; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        // Prompt user to enter a number to be searched
+        System.out.print("Enter the number to be searched: ");
+        int searchNumber = scanner.nextInt();
+
+        // Search for the number in the array and display the count
+        int count = 0;
+        for (int num : numbers) {
+            if (num == searchNumber) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            System.out.println(searchNumber + " appears " + count + " times in the array.");
+        } else {
+            System.out.println(searchNumber + " is not present in the array.");
+        }
+
+        scanner.close();
+    }
+}
+
